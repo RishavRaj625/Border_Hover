@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+}
+
+.container {
+    padding: 20px;
+    margin-top: 13vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    /* margin: 0 auto; */
+    margin: 0 20px;
+    padding: 2em;
+    width: 300px;
+    background: #1c1f2b;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.card h1 {
+    text-align: center;
+    margin-bottom: 5px;
+    color: white;
+}
+.card p{
+    color: rgb(127, 124, 130);
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.card ::after, .card::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* background: red; */
+
+    /* background-image: conic-gradient(red,blue); */
+
+    /* background-image: conic-gradient(#ff4545,#00ff99,#006aff, #ff0095); */
+
+    /* background-image: conic-gradient(from 90deg,transparent 70%, blue);  */
+    /* change the degree border radius also changing */
+
+    background-image: conic-gradient(from var(--angle),transparent 70%, blue); 
+    
+    /* background-image: conic-gradient(from var(--angle),transparent 70%,#ff4545,#00ff99,#006aff, #ff0095); */
+
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+
+    animation: 3s spin linear infinite;
+}
+
+.card::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle:360deg;
+    }
+}
+
+/* For Second Card */
+
+.card1 {
+    /* margin: 0 auto; */
+    margin: 0 20px;
+    padding: 2em;
+    width: 300px;
+    background: #1c1f2b;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+
+     margin-bottom: 20px;  /* more than 2card then give the space between 2 card*/
+     margin-top: 15px;
+}
+
+.card1 h1 {
+    text-align: center;
+    margin-bottom: 5px;
+    color: white;
+}
+.card1 p{
+    color: rgb(127, 124, 130);
+}
+
+.card1 ::after, .card1::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* background: red; */
+
+    /* background-image: conic-gradient(red,blue); */
+    
+    background-image: conic-gradient(#ff4545,#00ff99,#006aff, #ff0095);
+
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+
+.card1::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+/* For Third Card */
+
+.card2 {
+    /* margin: 0 auto; */
+    margin: 0 20px;
+    padding: 2em;
+    width: 300px;
+    background: #1c1f2b;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+
+    /* more than 2card then give the space between 2 card margin (top,bottom) anyone used according to card adjustment*/
+     margin-bottom: 20px; 
+     margin-top: 15px;
+}
+
+.card2 h1 {
+    text-align: center;
+    margin-bottom: 5px;
+    color: white;
+}
+.card2 p{
+    color: rgb(211, 162, 234);
+}
+.card2 ::after, .card2::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    background-image: conic-gradient(red,blue);
+    
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+
+    animation: 3s spin linear infinite;
+}
+
+.card2::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+
+/* For Fourth Card */
+
+.card3 {
+    /* margin: 0 auto; */
+    margin: 0 20px;
+    padding: 2em;
+    width: 300px;
+    background: #1c1f2b;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+
+    /* More than 2card then give the space between 2 card*/
+     margin-bottom: 20px; 
+     margin-top: 15px;
+}
+
+.card3 h1 {
+    text-align: center;
+    margin-bottom: 5px;
+    color: rgb(220, 153, 153);
+}
+.card3 p{
+    color: rgb(251, 156, 156);
+}
+
+.card3 ::after, .card3::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    
+    background-image: conic-gradient(from var(--angle),transparent 70%,#ff4545,#00ff99,#006aff, #ff0095);
+
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+
+    animation: 3s spin linear infinite;
+}
+
+.card3::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+
+@media (max-width: 1400px) {
+    .container{
+        flex-wrap: wrap;
+    }
+   
+ }
